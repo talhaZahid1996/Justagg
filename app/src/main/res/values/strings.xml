@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Justagg</string>
+
+    <string name="editTextEmptyFieldError">Empty Field</string>
+    <string name="emailFormatError">Please Enter Correct Email</string>
+    <string name="passwordShortLength">Your password must be 6 digits or long.</string>
+
+    <string name="ok">OK</string>
+    <string name="error">Error</string>
+    <string name="success">Success</string>
+    <string name="confirmation">Confirmation</string>
+    <string name="caution">Caution</string>
+    <string name="alert">Alert</string>
+
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <string name="content_description">Content Description</string>
+    <string name="create_an_account">Create an Account</string>
+    <string name="sign_in">Sign In</string>
+
+    <string name="full_name">Full Name</string>
+    <string name="username">Username</string>
+    <string name="special_character_hint">Allowed characters are a–z,0–9. Special characters are not allowed.</string>
+    <string name="by_signing_up_you_agree_to_our">By continuing, you agree to accept our</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="and">&amp;</string>
+    <string name="terms_of_use">Terms of Use</string>
+    <string name="emailId">Email ID</string>
+    <string name="password">Password</string>
+    <string name="must_be_at_least_6_characters">Must be at least 6 characters</string>
+    <string name="forget_password">Forget Password</string>
+    <string name="sign_in_with_facebook">Sign In With Facebook</string>
+    <string name="sign_in_with_google">Sign In With Google</string>
+
+</resources>
