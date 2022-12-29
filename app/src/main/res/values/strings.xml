@@ -31,5 +31,8 @@
     <string name="forget_password">Forget Password</string>
     <string name="sign_in_with_facebook">Sign In With Facebook</string>
     <string name="sign_in_with_google">Sign In With Google</string>
+    <string name="create_account">Create Account</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="email">Email</string>
 
 </resources>
