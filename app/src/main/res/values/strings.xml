@@ -42,5 +42,16 @@
     <string name="title_menu">Menu</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="lead">Lead</string>
+    <string name="direct">Direct</string>
+    <string name="name">Name</string>
+    <string name="edit_contact">Edit Contact</string>
+    <string name="designation">Designation</string>
+    <string name="about_us">About Us</string>
+    <string name="edit_content">Edit Content</string>
+    <string name="search">Search</string>
+    <string name="links">Links</string>
+    <string name="manage">Manage</string>
+    <string name="help_support"><![CDATA[Help & Support]]></string>
 
 </resources>

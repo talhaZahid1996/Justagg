@@ -1,14 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.home.ui.share.ShareFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
-</FrameLayout>
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="@string/title_share"
+            app:titleCentered="true" />
+
+        <ImageView
+            android:id="@+id/ivQr"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:contentDescription="@string/content_description"
+            android:src="@drawable/ic_dummy_qr"
+            android:layout_marginTop="@dimen/_10sdp"
+            />
+
+        <TextView
+            android:id="@+id/tvLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:fontFamily="@font/montserrat_medium"
+            app:drawableEndCompat="@drawable/ic_tv_copy"
+            android:drawablePadding="@dimen/_5sdp"/>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Offline Mode"
+            android:textSize="@dimen/_14sdp"
+            app:thumbTint="@color/black"
+            android:elevation="@dimen/_3sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAppleWallet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:text="Add to Apple wallet"
+            app:icon="@drawable/ic_share_wallet"
+            app:iconSize="@dimen/_16sdp"
+            app:iconTint="@color/black"
+            android:textColor="@color/black"
+            app:backgroundTint="@color/white"
+            app:strokeColor="@color/black"
+            app:strokeWidth="1dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnShareText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:text="Share as Texts"
+            app:icon="@drawable/ic_share_text"
+            app:iconSize="@dimen/_16sdp"
+            app:iconTint="@color/black"
+            android:textColor="@color/black"
+            app:backgroundTint="@color/white"
+            app:strokeColor="@color/black"
+            app:strokeWidth="1dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnShareEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:text="Share as Email"
+            app:icon="@drawable/ic_share_email"
+            app:iconSize="@dimen/_16sdp"
+            app:iconTint="@color/black"
+            android:textColor="@color/black"
+            app:backgroundTint="@color/white"
+            app:strokeColor="@color/black"
+            app:strokeWidth="1dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCreateVirtual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:text="Create Virtual Background"
+            app:icon="@drawable/ic_share_virtual"
+            app:iconSize="@dimen/_16sdp"
+            app:iconTint="@color/black"
+            android:textColor="@color/black"
+            app:backgroundTint="@color/white"
+            app:strokeColor="@color/black"
+            app:strokeWidth="1dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCreateSignature"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:text="Create Email Signature"
+            app:icon="@drawable/ic_share_signature"
+            app:iconSize="@dimen/_16sdp"
+            app:iconTint="@color/black"
+            android:textColor="@color/black"
+            app:backgroundTint="@color/white"
+            app:strokeColor="@color/black"
+            app:strokeWidth="1dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnShareAnother"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:text="Share Another Way"
+            android:layout_marginTop="@dimen/_20sdp"
+            />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

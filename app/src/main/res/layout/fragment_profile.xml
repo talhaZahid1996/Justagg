@@ -6,4 +6,243 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.ui.profile.ProfileFragment">
 
+    <ImageView
+        android:id="@+id/ivBanner"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_150sdp"
+        android:contentDescription="@string/content_description"
+        android:elevation="@dimen/_3sdp"
+        android:scaleType="center"
+        android:src="@drawable/ic_dummy_home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.skydoves.powerspinner.PowerSpinnerView
+        android:id="@+id/spinnerProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:hint="Social Mode"
+        android:padding="@dimen/_10sdp"
+        android:textColorHint="@color/white"
+        android:elevation="@dimen/_5sdp"
+        app:fontFamily="@font/montserrat_bold"
+        app:spinner_arrow_padding="8dp"
+        app:spinner_arrow_show="true"
+        app:spinner_arrow_tint="@color/white"
+        app:spinner_popup_animation="dropdown"
+        app:spinner_popup_background="@color/white"
+        app:spinner_popup_elevation="@dimen/_10sdp"
+        app:layout_constraintTop_toTopOf="@id/ivBanner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/ivShare"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:contentDescription="@string/content_description"
+        android:elevation="@dimen/_3sdp"
+        android:src="@drawable/ic_share"
+        android:layout_marginEnd="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/spinnerProfile"
+        app:layout_constraintBottom_toBottomOf="@id/spinnerProfile"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivUser"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:src="@drawable/ic_dummy_user"
+        android:elevation="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="@id/ivBanner"
+        app:layout_constraintStart_toStartOf="@id/ivBanner"
+        app:layout_constraintTop_toBottomOf="@id/ivBanner" />
+
+    <TextView
+        android:id="@+id/tvLead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lead"
+        app:fontFamily="@font/montserrat_semi_bold"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintTop_toBottomOf="@id/ivBanner"
+        app:layout_constraintBottom_toBottomOf="@id/ivUser"
+        app:layout_constraintStart_toEndOf="@id/ivUser"
+        app:layout_constraintEnd_toStartOf="@id/sbLead"
+        />
+
+    <com.suke.widget.SwitchButton
+        android:id="@+id/sbLead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:sb_button_color="@color/black"
+        android:layout_marginHorizontal="@dimen/_5sdp"
+        app:layout_constraintTop_toTopOf="@+id/tvLead"
+        app:layout_constraintStart_toEndOf="@id/tvLead"
+        app:layout_constraintBottom_toBottomOf="@id/tvLead"
+        app:layout_constraintEnd_toStartOf="@id/tvDirect"
+        />
+
+    <TextView
+        android:id="@+id/tvDirect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/direct"
+        app:fontFamily="@font/montserrat_semi_bold"
+        android:layout_marginStart="@dimen/_5sdp"
+        app:layout_constraintTop_toTopOf="@id/sbLead"
+        app:layout_constraintBottom_toBottomOf="@id/sbLead"
+        app:layout_constraintStart_toEndOf="@id/sbLead"
+        app:layout_constraintEnd_toStartOf="@id/sbDirect"
+        />
+
+    <com.suke.widget.SwitchButton
+        android:id="@+id/sbDirect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:sb_button_color="@color/black"
+        android:layout_marginHorizontal="@dimen/_5sdp"
+        app:layout_constraintTop_toTopOf="@+id/tvDirect"
+        app:layout_constraintStart_toEndOf="@id/tvDirect"
+        app:layout_constraintBottom_toBottomOf="@id/tvDirect"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tvLabelName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/name"
+        app:fontFamily="@font/montserrat_semi_bold"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@id/ivUser"
+        app:layout_constraintStart_toStartOf="@id/ivUser"
+        />
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:autofillHints="name"
+        android:background="@null"
+        android:gravity="start"
+        android:hint="@string/full_name"
+        android:inputType="textPersonName"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="@id/tvLabelName"
+        app:layout_constraintBottom_toBottomOf="@id/tvLabelName"
+        app:layout_constraintEnd_toStartOf="@id/btnEditContact"
+        app:layout_constraintStart_toEndOf="@id/tvLabelName"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnEditContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_contact"
+        app:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_10sdp"
+        app:fontFamily="@font/montserrat_bold"
+        app:layout_constraintTop_toTopOf="@id/tvLabelName"
+        app:layout_constraintBottom_toBottomOf="@id/tvLabelName"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/_10sdp"
+        />
+
+    <TextView
+        android:id="@+id/tvLabelDesignation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/designation"
+        app:fontFamily="@font/montserrat_semi_bold"
+        android:layout_marginTop="@dimen/_15sdp"
+        app:layout_constraintTop_toBottomOf="@id/tvLabelName"
+        app:layout_constraintStart_toStartOf="@id/ivUser"
+        />
+
+    <EditText
+        android:id="@+id/etDesignation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:autofillHints="name"
+        android:background="@null"
+        android:gravity="start"
+        android:hint="@string/designation"
+        android:inputType="textPersonName"
+        app:layout_constraintTop_toTopOf="@id/tvLabelDesignation"
+        app:layout_constraintBottom_toBottomOf="@id/tvLabelDesignation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvLabelDesignation"
+        />
+
+    <TextView
+        android:id="@+id/tvLabelAbout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/about_us"
+        app:fontFamily="@font/montserrat_semi_bold"
+        android:layout_marginTop="@dimen/_15sdp"
+        app:layout_constraintTop_toBottomOf="@id/tvLabelDesignation"
+        app:layout_constraintStart_toStartOf="@id/ivUser"
+        />
+
+    <EditText
+        android:id="@+id/etAbout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:autofillHints="name"
+        android:gravity="start"
+        android:hint="@string/about_us"
+        android:inputType="textPersonName"
+        app:layout_constraintTop_toTopOf="@id/tvLabelAbout"
+        app:layout_constraintBottom_toBottomOf="@id/tvLabelAbout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvLabelAbout"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnEditContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_content"
+        android:textSize="@dimen/_10sdp"
+        app:fontFamily="@font/montserrat_bold"
+        android:paddingHorizontal="@dimen/_20sdp"
+        app:layout_constraintTop_toBottomOf="@id/etAbout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/_10sdp"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSocialLinks"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"
+        tools:listitem="@layout/item_social_link"
+        app:layout_constraintTop_toBottomOf="@id/btnEditContent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_16sdp"
+        android:layout_gravity="bottom|end"
+        android:contentDescription="@string/content_description"
+        android:src="@drawable/ic_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

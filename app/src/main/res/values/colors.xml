@@ -7,7 +7,7 @@
     <color name="holo_green_light">#ff99cc00</color>
     <color name="holo_red_light">#ffff4444</color>
 
-    <color name="grey_50">#FAFAFA</color>
-    <color name="darkGrey">#5F5E5E</color>
+    <color name="grey_50">#F2F2F2</color>
+    <color name="darkGrey">#696969</color>
 
 </resources>

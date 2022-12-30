@@ -83,4 +83,10 @@ dependencies {
     //ImagePicker
     implementation 'com.github.dhaval2404:imagepicker:2.1'
 
+    //Switch
+    implementation 'com.github.zcweng:switch-button:0.0.3@aar'
+
+    //MaterialSpinner
+    implementation "com.github.skydoves:powerspinner:1.2.3"
+
 }

@@ -1,14 +1,336 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
     tools:context=".ui.home.ui.analytics.AnalyticsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@string/title_analytics"
+            app:titleCentered="true" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvStats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            app:cardBackgroundColor="#E9E9E9"
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp">
+
+                <TextView
+                    android:id="@+id/tvPastHours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Past 24 Hours"
+                    app:fontFamily="@font/montserrat_semi_bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvViews"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:text="@string/app_name"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/tvClicks"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvPastHours" />
+
+                <TextView
+                    android:id="@+id/tvClicks"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:text="@string/app_name"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/tvClickRate"
+                    app:layout_constraintStart_toEndOf="@id/tvViews"
+                    app:layout_constraintTop_toBottomOf="@id/tvPastHours" />
+
+                <TextView
+                    android:id="@+id/tvClickRate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:text="@string/app_name"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvClicks"
+                    app:layout_constraintTop_toBottomOf="@id/tvPastHours" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.skydoves.powerspinner.PowerSpinnerView
+            android:id="@+id/spinnerDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:hint="Week"
+            android:padding="@dimen/_10sdp"
+            android:textColorHint="@color/black"
+            android:elevation="@dimen/_5sdp"
+            app:fontFamily="@font/montserrat_semi_bold"
+            app:spinner_arrow_padding="8dp"
+            app:spinner_arrow_show="true"
+            app:spinner_arrow_tint="@color/black"
+            app:spinner_popup_animation="dropdown"
+            app:spinner_popup_background="@color/white"
+            app:spinner_popup_elevation="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@id/cvStats"
+            app:layout_constraintStart_toStartOf="@id/cvStats"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvTotalViews"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            app:cardBackgroundColor="@color/black"
+            app:cardCornerRadius="@dimen/_15sdp"
+            app:layout_constraintEnd_toStartOf="@id/cvTotalClicks"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/spinnerDuration">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginVertical="@dimen/_10sdp">
+
+                <ImageView
+                    android:id="@+id/ivInfoTotalViews"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:src="@drawable/ic_info"
+                    android:contentDescription="@string/content_description"
+                    />
+
+                <TextView
+                    android:id="@+id/tvTotalViews"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:text="312\nViews"
+                    android:textSize="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:background="@color/white"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvTotalClicks"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            app:cardBackgroundColor="@color/black"
+            app:cardCornerRadius="@dimen/_15sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cvTotalViews"
+            app:layout_constraintTop_toBottomOf="@id/spinnerDuration">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginVertical="@dimen/_10sdp">
+
+                <ImageView
+                    android:id="@+id/ivInfoTotalClicks"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:src="@drawable/ic_info"
+                    android:contentDescription="@string/content_description"
+                    />
+
+                <TextView
+                    android:id="@+id/tvTotalClicks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:gravity="center"
+                    android:text="44\nClicks"
+                    android:textSize="@dimen/_20sdp"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:background="@color/white"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvSavedContacts"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            app:cardBackgroundColor="@color/black"
+            app:cardCornerRadius="@dimen/_15sdp"
+            app:layout_constraintEnd_toStartOf="@id/cvTotalClicks"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cvTotalViews">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginVertical="@dimen/_10sdp">
+
+                <ImageView
+                    android:id="@+id/ivInfoSavedContact"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:src="@drawable/ic_info"
+                    android:contentDescription="@string/content_description"
+                    />
+
+                <TextView
+                    android:id="@+id/tvSavedContact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:text="76\nContact"
+                    android:textSize="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:background="@color/white"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvClickRate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            app:cardBackgroundColor="@color/black"
+            app:cardCornerRadius="@dimen/_15sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cvSavedContacts"
+            app:layout_constraintTop_toBottomOf="@id/cvTotalClicks">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginVertical="@dimen/_10sdp">
+
+                <ImageView
+                    android:id="@+id/ivInfoClickRate"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:src="@drawable/ic_info"
+                    android:contentDescription="@string/content_description"
+                    />
+
+                <TextView
+                    android:id="@+id/tvTotalClickRate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:gravity="center"
+                    android:text="8%\nClicks"
+                    android:textSize="@dimen/_20sdp"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:background="@color/white"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tvLabelLinks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/links"
+            app:fontFamily="@font/montserrat_bold"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintTop_toBottomOf="@id/cvSavedContacts"
+            app:layout_constraintStart_toStartOf="@id/cvSavedContacts"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSocialLinks"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="vertical"
+            tools:listitem="@layout/item_social_link"
+            app:layout_constraintTop_toBottomOf="@id/tvLabelLinks"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

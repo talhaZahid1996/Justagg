@@ -25,8 +25,8 @@ class SplashActivity : AppCompatActivity() {
 
         loadImage(R.drawable.ic_logo, binding.ivLogo)
 
-        timer.schedule(500) {
-            openActivity(HomeActivity::class.java)
+        timer.schedule(2000) {
+            openActivity(IntroActivity::class.java)
         }
 
     }

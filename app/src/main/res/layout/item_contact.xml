@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/_5sdp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/civStatus"
+        android:layout_width="@dimen/_10sdp"
+        android:layout_height="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:src="#659ED1"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/civUser"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:src="@drawable/ic_dummy_user"
+        app:civ_border_color="@color/black"
+        app:civ_border_width="@dimen/_1sdp"
+        app:civ_circle_background_color="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/civStatus"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:maxLines="1"
+        android:text="@string/app_name"
+        app:fontFamily="@font/montserrat_semi_bold"
+        app:layout_constraintBottom_toTopOf="@id/tvDesignation"
+        app:layout_constraintEnd_toStartOf="@id/tvDate"
+        app:layout_constraintStart_toEndOf="@id/civUser"
+        app:layout_constraintTop_toTopOf="@id/civUser"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/tvDesignation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:maxLines="1"
+        android:text="@string/app_name"
+        app:layout_constraintBottom_toBottomOf="@id/civUser"
+        app:layout_constraintStart_toEndOf="@id/civUser"
+        app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:text="@string/app_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvName" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

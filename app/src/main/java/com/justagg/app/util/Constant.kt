@@ -1,5 +1,7 @@
 package com.justagg.app.util
 
+import com.justagg.app.data.response.DummyResponse
+
 object Constant {
 
     var k_SERVER_IP = "https://assetmanager-mulleadys.azurewebsites.net/MOBILE_APP_API/y35g1f2/"
@@ -14,5 +16,13 @@ object Constant {
 
     internal const val k_Success = "Success"
     internal const val k_Error = "Error"
+
+    val mListDummyLinks = mutableListOf(
+        DummyResponse("Instagram"),
+        DummyResponse("Facebook"),
+        DummyResponse("LinkedIn"),
+        DummyResponse("Snapchat"),
+        DummyResponse("Twitter"),
+    )
 
 }

@@ -1,14 +1,315 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
     tools:context=".ui.home.ui.menu.MenuFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:contentInsetStart="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="@dimen/_10sdp">
+
+                <ImageView
+                    android:id="@+id/ivAddContact"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:contentDescription="@string/content_description"
+                    android:src="@drawable/ic_contact"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_5sdp"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="@string/designation"
+                    android:textSize="@dimen/_16sdp"
+                    app:fontFamily="@font/montserrat_bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/ivNotification"
+                    app:layout_constraintStart_toEndOf="@id/ivAddContact"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/ivNotification"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:contentDescription="@string/content_description"
+                    android:src="@drawable/ic_notification"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvManage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:strokeColor="@color/darkGrey"
+            app:strokeWidth="@dimen/_1sdp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/civUser"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:src="@drawable/ic_nav_profile"
+                    app:civ_border_color="@color/darkGrey"
+                    app:civ_border_width="@dimen/_1sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_5sdp"
+                    android:text="@string/app_name"
+                    app:layout_constraintBottom_toTopOf="@id/tvMobile"
+                    app:layout_constraintEnd_toStartOf="@id/btnManage"
+                    app:layout_constraintStart_toEndOf="@id/civUser"
+                    app:layout_constraintTop_toTopOf="@id/civUser"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/tvMobile"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_5sdp"
+                    android:text="@string/app_name"
+                    app:layout_constraintBottom_toBottomOf="@id/civUser"
+                    app:layout_constraintEnd_toStartOf="@id/btnManage"
+                    app:layout_constraintStart_toEndOf="@id/civUser"
+                    app:layout_constraintTop_toBottomOf="@id/tvName" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnManage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/manage"
+                    app:icon="@drawable/ic_pencil"
+                    app:iconGravity="textEnd"
+                    app:iconSize="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tvLabelProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="Complete Your Profile"
+            app:fontFamily="@font/montserrat_semi_bold"
+            app:layout_constraintEnd_toEndOf="@id/cvManage"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/cvManage"
+            app:layout_constraintTop_toBottomOf="@id/cvManage" />
+
+        <ProgressBar
+            android:id="@+id/progressProfile"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:progress="20"
+            android:progressTint="@color/darkGrey"
+            android:scaleY="1.5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvLabelProfile" />
+
+        <TextView
+            android:id="@+id/tvProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20% Completed"
+            app:layout_constraintEnd_toStartOf="@id/tvTask"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@id/progressProfile"
+            app:layout_constraintTop_toBottomOf="@id/progressProfile" />
+
+        <TextView
+            android:id="@+id/tvTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1/5 task remaining"
+            app:layout_constraintEnd_toEndOf="@id/progressProfile"
+            app:layout_constraintStart_toEndOf="@id/tvProgress"
+            app:layout_constraintTop_toBottomOf="@id/progressProfile" />
+
+        <LinearLayout
+            android:id="@+id/llMenuButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_20sdp"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvProgress">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnActivate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Activate Product" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnHowToUse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start|center_vertical"
+                android:text="How to use Justagg"
+                android:textColor="@color/black"
+                app:backgroundTint="@color/white"
+                app:icon="@drawable/ic_next"
+                app:iconGravity="end"
+                app:iconTint="@color/black"
+                app:strokeColor="@color/black"
+                app:strokeWidth="1dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnForTeam"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start|center_vertical"
+                android:text="Get Justagg for teams"
+                android:textColor="@color/black"
+                app:backgroundTint="@color/white"
+                app:icon="@drawable/ic_next"
+                app:iconGravity="end"
+                app:iconTint="@color/black"
+                app:strokeColor="@color/black"
+                app:strokeWidth="1dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDevice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start|center_vertical"
+                android:text="Get Justagg Device"
+                android:textColor="@color/black"
+                app:backgroundTint="@color/white"
+                app:icon="@drawable/ic_next"
+                app:iconGravity="end"
+                app:iconTint="@color/black"
+                app:strokeColor="@color/black"
+                app:strokeWidth="1dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnIntegration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start|center_vertical"
+                android:text="Advanced Integrations"
+                android:textColor="@color/black"
+                app:backgroundTint="@color/white"
+                app:icon="@drawable/ic_next"
+                app:iconGravity="end"
+                app:iconTint="@color/black"
+                app:strokeColor="@color/black"
+                app:strokeWidth="1dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAmbassador"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start|center_vertical"
+                android:text="Ambassador Program"
+                android:textColor="@color/black"
+                app:backgroundTint="@color/white"
+                app:icon="@drawable/ic_next"
+                app:iconGravity="end"
+                app:iconTint="@color/black"
+                app:strokeColor="@color/black"
+                app:strokeWidth="1dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnHelp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start|center_vertical"
+                android:text="@string/help_support"
+                android:textColor="@color/black"
+                app:backgroundTint="@color/white"
+                app:icon="@drawable/ic_next"
+                app:iconGravity="end"
+                app:iconTint="@color/black"
+                app:strokeColor="@color/black"
+                app:strokeWidth="1dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnFeedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Share Feedback"
+                app:backgroundTint="#5596D1"
+                app:icon="@drawable/ic_star"
+                app:iconGravity="textStart"
+                app:iconSize="@dimen/_15sdp"
+                app:iconTintMode="multiply"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSignOut"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sign Out" />
+
+            <TextView
+                android:id="@+id/tvDeleteAccount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:text="Delete Account"
+                android:gravity="center"
+                />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
