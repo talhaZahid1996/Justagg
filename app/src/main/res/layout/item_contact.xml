@@ -6,17 +6,6 @@
     android:padding="@dimen/_5sdp">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/civStatus"
-        android:layout_width="@dimen/_10sdp"
-        android:layout_height="@dimen/_10sdp"
-        android:layout_marginStart="@dimen/_10sdp"
-        android:src="#659ED1"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/civUser"
         android:layout_width="@dimen/_50sdp"
         android:layout_height="@dimen/_50sdp"
@@ -26,22 +15,38 @@
         app:civ_border_width="@dimen/_1sdp"
         app:civ_circle_background_color="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/civStatus"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvName"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_10sdp"
         android:maxLines="1"
         android:text="@string/app_name"
+        android:ellipsize="end"
         app:fontFamily="@font/montserrat_semi_bold"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintBottom_toTopOf="@id/tvDesignation"
-        app:layout_constraintEnd_toStartOf="@id/tvDate"
+        app:layout_constraintEnd_toStartOf="@id/civStatus"
         app:layout_constraintStart_toEndOf="@id/civUser"
         app:layout_constraintTop_toTopOf="@id/civUser"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintVertical_chainStyle="packed" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/civStatus"
+        android:layout_width="@dimen/_10sdp"
+        android:layout_height="@dimen/_10sdp"
+        android:layout_marginHorizontal="@dimen/_5sdp"
+        android:src="#659ED1"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@id/tvName"
+        app:layout_constraintEnd_toStartOf="@id/tvDate"
+        app:layout_constraintTop_toTopOf="@id/tvName"
+        app:layout_constraintBottom_toBottomOf="@id/tvName"/>
 
     <TextView
         android:id="@+id/tvDesignation"
@@ -50,6 +55,7 @@
         android:layout_marginStart="@dimen/_10sdp"
         android:maxLines="1"
         android:text="@string/app_name"
+        android:textSize="@dimen/_9sdp"
         app:layout_constraintBottom_toBottomOf="@id/civUser"
         app:layout_constraintStart_toEndOf="@id/civUser"
         app:layout_constraintTop_toBottomOf="@+id/tvName" />

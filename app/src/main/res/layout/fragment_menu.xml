@@ -44,7 +44,7 @@
                     android:ellipsize="end"
                     android:gravity="center"
                     android:maxLines="1"
-                    android:text="@string/designation"
+                    android:text="@string/title_menu"
                     android:textSize="@dimen/_16sdp"
                     app:fontFamily="@font/montserrat_bold"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -124,7 +124,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/manage"
-                    app:icon="@drawable/ic_pencil"
+                    app:icon="@drawable/ic_edit"
                     app:iconGravity="textEnd"
                     app:iconSize="@dimen/_10sdp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -191,11 +191,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvProgress">
 
-            <com.google.android.material.button.MaterialButton
+            <com.ncorti.slidetoact.SlideToActView
                 android:id="@+id/btnActivate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Activate Product" />
+                android:elevation="@dimen/_3sdp"
+                app:area_margin="0dp"
+                app:animation_duration="250"
+                app:outer_color="#5596D1"
+                app:text="Activate Product"
+                app:text_size="@dimen/_14sdp"
+                app:slider_height="@dimen/_40sdp"
+                app:slider_locked="false"
+                />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnHowToUse"
@@ -208,8 +216,9 @@
                 app:icon="@drawable/ic_next"
                 app:iconGravity="end"
                 app:iconTint="@color/black"
-                app:strokeColor="@color/black"
-                app:strokeWidth="1dp" />
+                app:elevation="@dimen/_5sdp"
+                app:strokeColor="@color/grey_50"
+                app:strokeWidth="@dimen/_1sdp"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnForTeam"
@@ -222,8 +231,9 @@
                 app:icon="@drawable/ic_next"
                 app:iconGravity="end"
                 app:iconTint="@color/black"
-                app:strokeColor="@color/black"
-                app:strokeWidth="1dp" />
+                app:elevation="@dimen/_5sdp"
+                app:strokeColor="@color/grey_50"
+                app:strokeWidth="@dimen/_1sdp"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnDevice"
@@ -236,8 +246,9 @@
                 app:icon="@drawable/ic_next"
                 app:iconGravity="end"
                 app:iconTint="@color/black"
-                app:strokeColor="@color/black"
-                app:strokeWidth="1dp" />
+                app:elevation="@dimen/_5sdp"
+                app:strokeColor="@color/grey_50"
+                app:strokeWidth="@dimen/_1sdp"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnIntegration"
@@ -250,8 +261,9 @@
                 app:icon="@drawable/ic_next"
                 app:iconGravity="end"
                 app:iconTint="@color/black"
-                app:strokeColor="@color/black"
-                app:strokeWidth="1dp" />
+                app:elevation="@dimen/_5sdp"
+                app:strokeColor="@color/grey_50"
+                app:strokeWidth="@dimen/_1sdp"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAmbassador"
@@ -264,8 +276,9 @@
                 app:icon="@drawable/ic_next"
                 app:iconGravity="end"
                 app:iconTint="@color/black"
-                app:strokeColor="@color/black"
-                app:strokeWidth="1dp" />
+                app:elevation="@dimen/_5sdp"
+                app:strokeColor="@color/grey_50"
+                app:strokeWidth="@dimen/_1sdp"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnHelp"
@@ -278,8 +291,9 @@
                 app:icon="@drawable/ic_next"
                 app:iconGravity="end"
                 app:iconTint="@color/black"
-                app:strokeColor="@color/black"
-                app:strokeWidth="1dp" />
+                app:elevation="@dimen/_5sdp"
+                app:strokeColor="@color/grey_50"
+                app:strokeWidth="@dimen/_1sdp"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnFeedback"

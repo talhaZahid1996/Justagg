@@ -12,9 +12,8 @@
         android:title="@string/title_contacts" />
 
     <item
-        android:id="@+id/nav_share"
-        android:icon="@drawable/ic_nav_share"
-        android:title="@string/title_share" />
+        android:id="@+id/placeholder"
+        android:title="" />
 
     <item
         android:id="@+id/nav_analytics"

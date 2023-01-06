@@ -20,6 +20,14 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
             adapter = ProfileAdapter(Constant.mListDummyLinks)
         }
 
+        binding.nsvProfile.setOnScrollChangeListener { _, _, scrollY, _, oldScrollY ->
+            if (scrollY>oldScrollY){
+                binding.fabMenu.visibility = View.GONE
+            } else {
+                binding.fabMenu.visibility = View.VISIBLE
+            }
+        }
+
     }
 
 }

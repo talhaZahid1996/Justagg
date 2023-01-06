@@ -18,7 +18,7 @@ class IntroActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        loadImage(R.drawable.intro_screen, binding.ivIntro)
+        loadImage(R.drawable.gif_dummy, binding.ivIntro)
 
         binding.btnSignIn.setOnClickListener { openActivity(SignInActivity::class.java, false) }
 

@@ -44,11 +44,12 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="lead">Lead</string>
     <string name="direct">Direct</string>
+    <string name="personal">Personal</string>
     <string name="name">Name</string>
     <string name="edit_contact">Edit Contact</string>
     <string name="designation">Designation</string>
     <string name="about_us">About Us</string>
-    <string name="edit_content">Edit Content</string>
+    <string name="edit_details">Edit Details</string>
     <string name="search">Search</string>
     <string name="links">Links</string>
     <string name="manage">Manage</string>

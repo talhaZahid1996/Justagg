@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_10sdp"
         android:hint="@string/search"
+        app:errorEnabled="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar">
@@ -31,6 +32,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:autofillHints="name"
+            android:drawableEnd="@drawable/ic_sort"
+            android:drawableTintMode="multiply"
             android:inputType="textPersonName" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -40,14 +43,19 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="3"
+        android:layout_marginVertical="@dimen/_10sdp"
         app:layout_constraintEnd_toEndOf="@id/tilSearch"
         app:layout_constraintStart_toStartOf="@id/tilSearch"
-        app:layout_constraintTop_toBottomOf="@id/tilSearch">
+        app:layout_constraintTop_toBottomOf="@id/tilSearch"
+        app:layout_constraintBottom_toTopOf="@id/rvContacts">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnNew"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.Button"
+            app:cornerRadius="@dimen/_20sdp"
+            app:fontFamily="@font/montserrat_bold"
             android:layout_marginHorizontal="@dimen/_5sdp"
             android:layout_weight="1"
             android:text="New"
@@ -64,6 +72,9 @@
             android:id="@+id/btnTask"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.Button"
+            app:cornerRadius="@dimen/_20sdp"
+            app:fontFamily="@font/montserrat_bold"
             android:layout_marginHorizontal="@dimen/_5sdp"
             android:layout_weight="1"
             android:text="Task"
@@ -76,6 +87,9 @@
             android:id="@+id/btnSelect"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.Button"
+            app:cornerRadius="@dimen/_20sdp"
+            app:fontFamily="@font/montserrat_bold"
             android:layout_marginHorizontal="@dimen/_5sdp"
             android:layout_weight="1"
             android:text="Select"
@@ -99,13 +113,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         />
 
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabScan"
-        style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/_16sdp"
-        android:text="Scan"
+        android:contentDescription="@string/content_description"
+        android:src="@drawable/ic_scan"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

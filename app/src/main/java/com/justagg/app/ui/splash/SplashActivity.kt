@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.justagg.app.R
 import com.justagg.app.databinding.ActivitySplashBinding
-import com.justagg.app.ui.home.HomeActivity
 import com.justagg.app.ui.intro.IntroActivity
 import com.justagg.app.util.loadImage
 import com.justagg.app.util.openActivity

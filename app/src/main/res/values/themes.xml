@@ -23,6 +23,7 @@
         <item name="android:textColorPrimary">@color/black</item>
         <item name="bottomSheetDialogTheme">@style/bottomSheetStyle</item>
         <item name="materialButtonStyle">@style/materialButtonStyle</item>
+        <item name="toolbarStyle">@style/materialToolbar</item>
     </style>
 
     <style name="textInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
@@ -37,6 +38,16 @@
         <item name="boxCornerRadiusTopEnd">@dimen/_20sdp</item>
         <item name="boxCornerRadiusBottomStart">@dimen/_20sdp</item>
         <item name="boxCornerRadiusBottomEnd">@dimen/_20sdp</item>
+    </style>
+
+    <style name="materialToolbar"
+        parent="Widget.MaterialComponents.Toolbar">
+        <item name="titleTextAppearance">@style/materialToolbarTitle</item>
+    </style>
+
+    <style name="materialToolbarTitle" parent="@style/TextAppearance.MaterialComponents.Headline6">
+        <item name="fontFamily">@font/montserrat_bold</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="materialButtonStyle"

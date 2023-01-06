@@ -23,6 +23,11 @@ object Constant {
         DummyResponse("LinkedIn"),
         DummyResponse("Snapchat"),
         DummyResponse("Twitter"),
+        DummyResponse("Instagram"),
+        DummyResponse("Facebook"),
+        DummyResponse("LinkedIn"),
+        DummyResponse("Snapchat"),
+        DummyResponse("Twitter"),
     )
 
 }
